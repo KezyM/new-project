@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="new style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Responsive Animated Navbar</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="logo.png" alt="Logo Image">
+        </div>
+        <div class="hamburger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Upcoming Events</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Reports</a></li>
+            <li><button class="login-button" href="#">Login</button></li>
+            <li><button class="join-button" href="#">Contact</button></li>
+        </ul>
+    </nav>
+	<br>
+	<hr style="margin-top: 90px" color="#f1f1f1">
+	
+	
+<!--	Hero starts here-->
+		<div class="Hero">
+	<!-- Section1 -->
+      <div class="section1">
+        <h1>CEPA COUNCIL</h1>
+        <h3>UAE-India</h3>
+
+		<div class="buttons-container">
+        <button class="button2">Primary Button</button>
+        <button class="button1">Secondary Button</button>
+		</div>
+        
+		 <div class="gallery-wrap">
+		<img src="back.png" id="backBtn">
+	<div class="gallery">
+		<div>
+			<span><img src="image1.jpg"></span>
+			<span><img src="image2.jpg"></span>
+			<span><img src="image3.jpg"></span>
+		</div>
+		<div>
+			<span><img src="image4.jpg"></span>
+			<span><img src="image5.jpg"></span>
+			<span><img src="image6.jpg"></span>
+		</div>
+	</div>
+		<img src="next.png" id="nextBtn">
+	</div>
+	
+	  
+      </div>
+	<!-- Section2 -->
+      <div class="section2">
+        <h2>Lorem Ipsum</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div class="cards">
+          <div class="card">
+            <i class="fa fa-user" id="fa-user" aria-hidden="true" ></i>
+			<p>Lorem Ipsum</p>
+            <h4>Icon</h4>
+          </div>
+          <div class="card">
+            <i class="fa fa-user" id="fa-user" aria-hidden="true" ></i>
+			<p>Lorem Ipsum</p>
+            <h4>Icon</h4>
+          </div>
+          <div class="card">
+            <i class="fa fa-user" id="fa-user" aria-hidden="true" ></i>
+			<p>Lorem Ipsum</p>
+            <h4>Icon</h4>
+          </div>
+          <div class="card">
+            <i class="fa fa-user" id="fa-user" aria-hidden="true" ></i>
+			<p>Lorem Ipsum</p>
+            <h4>Icon</h4>
+          </div>
+        </div>
+      </div>
+		</div>
+	<footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum, tortor eget tristique hendrerit, neque odio fringilla arcu.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Information</h3>
+        <p>Email: contact@gmail.com</p>
+        <p>Phone: +1 (123) 456-7890</p>
+        <p>Address: Delhi, India</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Testimonials</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; CEPA Council 2023. All rights reserved.</p>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </footer>
+	<!--	Phone screen image-->
+	<img src="image1.jpg" width="200px" id="200scrnimg">	  
+	
+	
+    <script>
+//		Hamburger Animation starts
+		const hamburger = document.querySelector(".hamburger");
+		const navLinks = document.querySelector(".nav-links");
+		const links = document.querySelectorAll(".nav-links li");
+
+hamburger.addEventListener('click', ()=>{
+   //Animate Links
+    navLinks.classList.toggle("open");
+    links.forEach(link => {
+        link.classList.toggle("fade");
+    });
+
+    //Hamburger Animation
+    hamburger.classList.toggle("toggle");
+});
+	
+//		Scrolling gallery
+		
+		let scrollContainer = document.querySelector(".gallery");
+		let backBtn = document.getElementById("backBtn");
+		let nextBtn = document.getElementById("nextBtn");
+		
+		scrollContainer.addEventListener("wheel", (evt) => {
+			evt.preventDefault();
+			scrollContainer.scrollLeft += evt.deltaY;
+			scrollContainer.style.scrollBehavior = "auto";
+		});
+		
+		nextBtn.addEventListener("click", ()=>{
+			scrollContainer.style.scrollBehavior = "smooth";
+			scrollContainer.scrollLeft += 900;
+		});
+		
+		backBtn.addEventListener("click", ()=>{
+			scrollContainer.style.scrollBehavior = "smooth";
+			scrollContainer.scrollLeft -= 900;
+		});
+	
+		
+		
+		
+	</script>
+</body>
+</html>
